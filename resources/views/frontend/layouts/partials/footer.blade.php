@@ -1,0 +1,54 @@
+<!-- Map Begin -->
+<div class="map">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-7">
+                <div class="map__inner">
+                    <h6>Jakarta</h6>
+                    <ul>
+                        <li>Jl Lakepoint Dr, Frisco, CO 80443, Jakarta</li>
+                        <li>Sweetcake@support.com</li>
+                        <li>+62 800-786-1000</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="map__iframe">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10784.188505644011!2d19.053119335158936!3d47.48899529453826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1543907528304"
+            height="300" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+</div>
+<!-- Map End -->
+
+<!-- Footer Section Begin -->
+<footer class="footer set-bg" data-setbg="{{ asset('frontend/img/footer-bg.jpg') }}">
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="copyright__text text-white text-center">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script> All rights reserved made <i class="fa fa-heart" aria-hidden="true"></i>
+                        by <a href="https://github.com/dzaki236" target="_blank">Dzaki</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+                {{-- <div class="col-lg-5">
+                        <div class="copyright__widget">
+                            <ul>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                                <li><a href="#">Site Map</a></li>
+                            </ul>
+                        </div>
+                    </div> --}}
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer Section End -->
