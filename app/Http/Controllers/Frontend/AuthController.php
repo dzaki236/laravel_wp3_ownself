@@ -23,6 +23,9 @@ class AuthController extends Controller
             $user = Socialite::driver('secure-google')->user();
             $checkUser = \App\Models\User::where('email', $user->email)->first();
             if ($checkUser) {
+                $checkUser->google_id = $user->id;
+                $checkUser->google_token = $user->token;
+                $checkUser->save();
                 Auth::login($checkUser);
                 alert('Success!', 'Login Successfully', 'success');
                 return redirect('/')->with('success', 'Login Successfully');
