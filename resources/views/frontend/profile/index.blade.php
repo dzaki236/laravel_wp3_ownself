@@ -11,7 +11,8 @@
                         aria-current="true">
                         Profile Saya
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action">Alamat</a>
+                    <a href="{{ route('alamat.index') }}"
+                        class="list-group-item list-group-item-action {{ $page == 'alamat' ? 'active' : '' }}">Alamat</a>
                 </div>
             </div>
             <div class="col-12 col-sm-12 col-md-10">
@@ -78,7 +79,6 @@
 @endsection
 @push('css')
     <link rel="stylesheet" href="{{ asset('frontend/css/nice-select.css') }}" type="text/css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 @endpush
 @push('js')
     <script src="{{ asset('frontend/js/jquery.nice-select.min.js') }}"></script>

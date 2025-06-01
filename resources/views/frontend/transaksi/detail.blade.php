@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 @section('title', $title)
 @section('content')
-    <div class="container">
+    <div class="container mt-5">
         <div class="col-md-12">
             <div class="invoice">
                 <!-- begin invoice-company -->
@@ -48,8 +48,8 @@
                             <thead>
                                 <tr>
                                     <th>PRODUCT DESCRIPTION</th>
-                                    <th class="text-center" width="10%">PRICE</th>
                                     <th class="text-center" width="10%">QTY</th>
+                                    <th class="text-center" width="10%">PRICE</th>
                                     <th class="text-right" width="20%">TOTAL PRICE</th>
                                 </tr>
                             </thead>
@@ -109,7 +109,7 @@
                 <!-- begin invoice-footer -->
                 <div class="invoice-footer">
                     <p class="text-center m-b-5 f-w-600">
-                        THANK YOU FOR YOUR BUSINESS
+                        THANK YOU FOR YOUR ORDER
                     </p>
                 </div>
                 <!-- end invoice-footer -->
@@ -125,7 +125,6 @@
 @endsection
 @push('css')
     <link rel="stylesheet" href="{{ asset('frontend/css/nice-select.css') }}" type="text/css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 @endpush
 @push('js')
     <script src="{{ asset('frontend/js/jquery.nice-select.min.js') }}"></script>

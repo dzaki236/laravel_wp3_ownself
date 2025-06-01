@@ -5,9 +5,12 @@
 <link rel="stylesheet" href="{{ asset('frontend/css/font-awesome.min.css') }}" type="text/css">
 <link rel="stylesheet" href="{{ asset('frontend/css/elegant-icons.css') }}" type="text/css">
 {{-- <link rel="stylesheet" href="{{ asset('frontend/css/nice-select.css') }}" type="text/css"> --}}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" href="{{ asset('global/ijaboCropTool/ijabocroptool.min.css') }}">
 <link rel="stylesheet" href="{{ asset('frontend/css/owl.carousel.min.css') }}" type="text/css">
 <link rel="stylesheet" href="{{ asset('frontend/css/slicknav.min.css') }}" type="text/css">
 <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}" type="text/css">
+<link rel="stylesheet" href="{{ asset('global/DataTables/datatables.min.css') }}">
 <link href="
 https://cdn.jsdelivr.net/npm/sweetalert2@11.21.2/dist/sweetalert2.min.css
 " rel="stylesheet">

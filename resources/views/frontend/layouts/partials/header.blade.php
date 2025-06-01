@@ -120,7 +120,8 @@
                         </li>
                         <li class="{{ $page == 'produk' ? 'active' : '' }}"><a
                                 href="{{ route('produk.index') }}">Product</a></li>
-                        <li><a href="./about.html">Transaksi</a></li>
+                        <li class="{{ $page == 'transaksi' ? 'active' : '' }}"><a
+                                href="{{ route('transaksi.index') }}">Transaksi</a></li>
                     </ul>
                 </nav>
             </div>

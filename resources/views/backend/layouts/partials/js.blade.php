@@ -23,7 +23,7 @@
 <script src="{{ asset('backend/assets/libs/flot/jquery.flot.crosshair.js') }}"></script>
 <script src="{{ asset('backend/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js') }}"></script>
 <script src="{{ asset('backend/dist/js/pages/chart/chart-page-init.js') }}"></script>
-<script src="{{ asset('backend/assets/extra-libs/DataTables/datatables.min.js') }}"></script>
+<script src="{{ asset('global/DataTables/datatables.min.js') }}"></script>
 <script src="{{ asset('global/ijaboCropTool/ijabocroptool.min.js') }}"></script>
 <script>
     /****************************************

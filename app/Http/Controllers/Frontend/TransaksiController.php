@@ -17,7 +17,10 @@ class TransaksiController extends Controller
     //
     public function index()
     {
-        return view('frontend.transaksi.index');
+        $data['title'] = 'Transaksi';
+        $data['page'] = 'transaksi';
+        $data['transaksi'] = Transaksi::with(['orders', 'ongkir_transaksi'])->where('user_id', auth()->user()->id)->latest()->get();
+        return view('frontend.transaksi.index', $data);
     }
     public function store(Request $request)
     {

@@ -9,10 +9,10 @@ use Illuminate\Http\Request;
 class OriginController extends Controller
 {
     //
-    public function get_cities_origin($province_id)
+    public function get_cities_origin(Request $request)
     {
         # code...
-        $cities = City::where('province_id', $province_id)->get();
+        $cities = City::where('province_id', $request->province_id)->get();
         return response()->json($cities);
     }
 }

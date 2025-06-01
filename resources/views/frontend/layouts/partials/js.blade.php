@@ -9,8 +9,21 @@
 <script src="{{ asset('frontend/js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('frontend/js/jquery.nicescroll.min.js') }}"></script>
 {{-- <script src="{{ asset('frontend/js/main.js') }}"></script> --}}
+<script src="{{ asset('global/DataTables/datatables.min.js') }}"></script>
 <script src="{{ asset('frontend/js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('global/ijaboCropTool/ijabocroptool.min.js') }}"></script>
+<script>
+    /****************************************
+     *       Basic Table                   *
+     ****************************************/
+    $('#zero_config').DataTable({
+        language: {
+            url: '//cdn.datatables.net/plug-ins/2.2.2/i18n/id.json',
+        },
+    });
+    $("form").attr("autocomplete", "off");
+    $("form").attr("enctype", "multipart/form-data");
+</script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const deleteButtons = document.querySelectorAll('.btn-delete');
