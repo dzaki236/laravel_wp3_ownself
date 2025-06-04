@@ -19,6 +19,7 @@
         "laravel/sanctum": "^2.14",
         "laravel/socialite": "^5.20",
         "laravel/tinker": "^2.7",
+        "maatwebsite/excel": "*",
         "midtrans/midtrans-php": "^2.6",
         "realrashid/sweet-alert": "^7.3"
     },
