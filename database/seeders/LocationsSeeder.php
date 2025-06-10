@@ -21,7 +21,7 @@ class LocationsSeeder extends Seeder
         // $sql = file_get_contents(database_path('wilayah/structure.sql'));
         // $sql2 = file_get_contents(database_path('wilayah/data.sql'));
         // DB::unprepared($sql);
-        $sql2 = `-- phpMyAdmin SQL Dump
+        $sql2 = "-- phpMyAdmin SQL Dump
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
@@ -36,9 +36,9 @@ START TRANSACTION;
 
 SET time_zone = "+00:00";
 
-use laravel_ecommerce;
+use dzakimyi_ecommerce;
 --
--- Database: `laravel_ecommerce`
+-- Database: `dzakimyi_ecommerce`
 --
 
 --
@@ -4315,7 +4315,7 @@ VALUES (
     );
 
 COMMIT;
-`;
+";
         DB::statement($sql2);
     }
 }
