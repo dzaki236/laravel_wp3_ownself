@@ -117,7 +117,7 @@
                     <div class="cart__discount">
                         <h6>Address</h6>
                         <div class="table-responsive" style="height:20em;">
-                            @foreach (auth()->user()->alamat as $alamat)
+                            @forelse (auth()->user()->alamat as $alamat)
                                 <div class="card mb-4">
                                     <div class="card-body">
                                         <div class="form-check">
@@ -139,7 +139,11 @@
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
+                            @empty
+                                <div class="alert alert-warning text-center">
+                                    <strong>Oops!</strong> Alamat tidak ditemukan.
+                                </div>
+                            @endforelse
                         </div>
                         {{-- <form action="#">
                             <button type="submit">Apply</button>
