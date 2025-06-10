@@ -40,8 +40,9 @@
                                 class="sidebar-link"><i class="mdi mdi-chevron-right"></i><span class="hide-menu">
                                     Transaksi
                                 </span></a></li>
-                        <li class="sidebar-item {{ $page == 'laporan_produk' ? 'active' : '' }}"><a href="#"
-                                class="sidebar-link"><i class="mdi mdi-chevron-right"></i><span class="hide-menu">
+                        <li class="sidebar-item {{ $page == 'laporan_produk' ? 'active' : '' }}"><a
+                                href="{{ route('backend.report.produk') }}" class="sidebar-link"><i
+                                    class="mdi mdi-chevron-right"></i><span class="hide-menu">
                                     Produk
                                 </span></a></li>
                     </ul>
