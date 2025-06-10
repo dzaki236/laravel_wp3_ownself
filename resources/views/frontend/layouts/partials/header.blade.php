@@ -6,7 +6,7 @@
             @if (auth()->user()->role == 'customer')
                 <a href="{{ route('cart.index') }}">
                     <div class="offcanvas__cart__item">
-                        <a href="#"><img src="{{ asset('frontend/img/icon/cart.png') }}" alt="">
+                        <a href="{{ route('cart.index') }}"><img src="{{ asset('frontend/img/icon/cart.png') }}" alt="">
                             <span>{{ auth()->user()->carts->count() }}</span></a>
                         <div class="cart__price">Cart:
                             <span>{{ format_rupiah(auth()->user()->carts->sum('total_harga')) }}</span>
