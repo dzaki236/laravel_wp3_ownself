@@ -31,7 +31,7 @@ class CartController extends Controller
         $biaya_admin = 0;
         if (auth()->user()->carts->count() > 0) {
             # code...
-            $biaya_admin = 1000;
+            $biaya_admin = env('BIAYA_ADMIN');
         }
         $data['total_harga_cart'] = $total_harga + $biaya_admin;
         $data['subtotal_harga_cart'] = $total_harga;
