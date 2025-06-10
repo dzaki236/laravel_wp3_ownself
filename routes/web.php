@@ -34,7 +34,7 @@ Route::prefix('backend')->name('backend.')->group(function () {
 });
 
 Route::get('/login', function () {
-    return redirect()->route('backend.auth');
+    return redirect('/');
 })->name('login');
 Route::get('/home', function () {
     return redirect()->route('backend.dashboard.index');

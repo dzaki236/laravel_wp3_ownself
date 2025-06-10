@@ -71,4 +71,9 @@ class User extends Authenticatable
         # code...
         return $this->hasMany(Alamat::class, 'user_id', 'id');
     }
+    public function transaksi()
+    {
+        # code...
+        return $this->hasMany(Transaksi::class, 'user_id', 'id');
+    }
 }

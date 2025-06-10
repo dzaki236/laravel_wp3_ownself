@@ -24,7 +24,7 @@ class ProfileController extends Controller
         $request->validate([
             "name" => 'required',
             // "email" => "required|email|unique:users,email," . auth()->user()->id,
-            "phone" => "nullable|numeric|unique:users,phone," . auth()->user()->id,
+            "phone" => "nullable|unique:users,phone," . auth()->user()->id,
             "password" => "nullable|min:6|confirmed",
         ]);
         $user = User::find(auth()->user()->id);

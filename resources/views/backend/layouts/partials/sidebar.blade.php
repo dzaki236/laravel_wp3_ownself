@@ -31,22 +31,26 @@
                                 </span></a></li>
                     </ul>
                 </li>
-                <li class="sidebar-item {{ $page == 'laporan' ? 'selected' : '' }}"> <a
-                        class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
-                        aria-expanded="false"><i class="mdi mdi-chart-gantt"></i><span class="hide-menu">Laporan
-                        </span></a>
-                    <ul aria-expanded="false" class="collapse first-level">
-                        <li class="sidebar-item {{ $page == 'laporan_transaksi' ? 'active' : '' }}"><a href="#"
-                                class="sidebar-link"><i class="mdi mdi-chevron-right"></i><span class="hide-menu">
-                                    Transaksi
-                                </span></a></li>
-                        <li class="sidebar-item {{ $page == 'laporan_produk' ? 'active' : '' }}"><a
-                                href="{{ route('backend.report.produk') }}" class="sidebar-link"><i
-                                    class="mdi mdi-chevron-right"></i><span class="hide-menu">
-                                    Produk
-                                </span></a></li>
-                    </ul>
-                </li>
+                @if (auth()->user()->role == 'super_admin')
+                    <li class="sidebar-item {{ $page == 'laporan' ? 'selected' : '' }}"> <a
+                            class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
+                            aria-expanded="false"><i class="mdi mdi-chart-gantt"></i><span class="hide-menu">Laporan
+                            </span></a>
+                        <ul aria-expanded="false" class="collapse first-level">
+                            <li class="sidebar-item {{ $page == 'laporan_transaksi' ? 'active' : '' }}"><a
+                                    href="#" class="sidebar-link"><i class="mdi mdi-chevron-right"></i><span
+                                        class="hide-menu">
+                                        Transaksi
+                                    </span></a></li>
+                            <li class="sidebar-item {{ $page == 'laporan_produk' ? 'active' : '' }}"><a
+                                    href="{{ route('backend.report.produk') }}" class="sidebar-link"><i
+                                        class="mdi mdi-chevron-right"></i><span class="hide-menu">
+                                        Produk
+                                    </span></a></li>
+                        </ul>
+                    </li>
+                @endif
+
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

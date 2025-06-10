@@ -20,7 +20,7 @@ class AuthController extends Controller
         # code...
         try {
             //code...
-            $user = Socialite::driver('secure-google')->user();
+            $user = Socialite::driver('secure-google')->stateless()->user();
             $checkUser = \App\Models\User::where('email', $user->email)->first();
             if ($checkUser) {
                 $checkUser->google_id = $user->id;

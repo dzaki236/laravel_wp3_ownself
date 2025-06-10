@@ -13,7 +13,7 @@ Route::middleware(['role:admin,super_admin', 'auth'])->name('produk.')->prefix('
     Route::delete('/destroy/{id}', 'destroy')->name('destroy');
     Route::post('update_foto_produk/{id}', [ProdukController::class, 'update_foto_produk'])->name('update_foto_produk');
 });
-Route::middleware(['role:admin,super_admin','auth'])->name('foto_produk.')->prefix('foto_produk')->controller(FotoProdukController::class)->group(function () {
+Route::middleware(['role:admin,super_admin', 'auth'])->name('foto_produk.')->prefix('foto_produk')->controller(FotoProdukController::class)->group(function () {
     Route::post('/store/{produk_id}', 'store')->name('store');
     Route::delete('/destroy/{id}', 'destroy')->name('destroy');
 });
