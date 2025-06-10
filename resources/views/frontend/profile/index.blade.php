@@ -23,7 +23,7 @@
                             <div class="col-12 col-sm-12 col-md-6">
                                 <img src="{{ auth()->user()->url_foto_profile }}" alt="No img" class="w-50 mb-3">
                                 <div class="mb-3">
-                                    <label for="foto_profile" class="form-label">Foto produk</label>
+                                    <label for="foto_profile" class="form-label">Foto profile</label>
                                     <div class="image-previewer"></div>
                                     <input type="file" class="form-control" name="foto_profile" id="foto_profile"
                                         placeholder="Masukkan foto profile" aria-describedby="fileHelpId"
@@ -44,7 +44,7 @@
                                         <label for="email" class="form-label">Alamat Email </label>
                                         <input type="email" class="form-control" name="email" id="email"
                                             aria-describedby="helpId" placeholder="Masukkan alamat email"
-                                            value="{{ old('email', auth()->user()->email) }}" required />
+                                            value="{{ old('email', auth()->user()->email) }}" readonly disabled />
                                     </div>
                                     <div class="mb-3">
                                         <label for="phone" class="form-label">Nomor Handphone </label>
