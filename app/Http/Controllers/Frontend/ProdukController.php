@@ -22,7 +22,7 @@ class ProdukController extends Controller
                 $q->where('nama_kategori', request()->get('kategori'));
             });
         })->when(request()->get('search'), function ($query) {
-            return $query->where('nama', 'like', '%' . request()->get('search') . '%');
+            return $query->where('nama_produk', 'like', '%' . request()->get('search') . '%');
         })->paginate()->appends(request()->all());
         return view('frontend.produk.index', $data);
     }
