@@ -15,27 +15,30 @@ use App\Http\Controllers\Backend\AuthController;
 |
 */
 
-// Frontend Routes
-$includeFrontEndFolders = ['frontend'];
-foreach ($includeFrontEndFolders as $folderFrontEnd) {
-    foreach (glob(__DIR__ . "/{$folderFrontEnd}/*.php") as $fileFrontEnd) {
-        require $fileFrontEnd;
-    }
-}
+Route::middleware('throttle:10,1')->group(function () {
 
-// Backend Routes
-Route::prefix('backend')->name('backend.')->group(function () {
-    $includeBackendFolders = ['backend'];
-    foreach ($includeBackendFolders as $folderBackend) {
-        foreach (glob(__DIR__ . "/{$folderBackend}/*.php") as $fileBackend) {
-            require $fileBackend;
+    // Frontend Routes
+    $includeFrontEndFolders = ['frontend'];
+    foreach ($includeFrontEndFolders as $folderFrontEnd) {
+        foreach (glob(__DIR__ . "/{$folderFrontEnd}/*.php") as $fileFrontEnd) {
+            require $fileFrontEnd;
         }
     }
-});
 
-Route::get('/login', function () {
-    return redirect('/');
-})->name('login');
-Route::get('/home', function () {
-    return redirect()->route('backend.dashboard.index');
-})->name('home');
+    // Backend Routes
+    Route::prefix('backend')->name('backend.')->group(function () {
+        $includeBackendFolders = ['backend'];
+        foreach ($includeBackendFolders as $folderBackend) {
+            foreach (glob(__DIR__ . "/{$folderBackend}/*.php") as $fileBackend) {
+                require $fileBackend;
+            }
+        }
+    });
+
+    Route::get('/login', function () {
+        return redirect('/');
+    })->name('login');
+    Route::get('/home', function () {
+        return redirect()->route('backend.dashboard.index');
+    })->name('home');
+});
