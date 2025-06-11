@@ -19,6 +19,6 @@ class KategoriSeeder extends Seeder
         Kategori::create(['nama_kategori' => 'Cake']);
         Kategori::create(['nama_kategori' => 'Cookies']);
         Kategori::create(['nama_kategori' => 'Bread']);
-        Kategori::create(['nama_kategori' => 'Beverage']);
+        Kategori::create(['nama_kategori' => 'Mini Cake']);
     }
 }
