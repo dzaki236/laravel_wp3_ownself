@@ -60,7 +60,7 @@
                                 <div class="col-12 col-sm-12 col-md-6">
                                     <div class="form-group">
                                         <label for="no_hp">Nomor Handphone Penerima</label>
-                                        <input type="text" name="no_hp" class="form-control" id="no_hp"
+                                        <input type="number" name="no_hp" class="form-control" id="no_hp"
                                             placeholder="Masukkan nomor handphone penerima" required
                                             value="{{ old('no_hp', $alamat->no_hp) }}">
                                     </div>
@@ -73,7 +73,7 @@
                             </div>
                             <div class="form-group mb-4">
                                 <label for="kode_pos">Kode Pos</label>
-                                <input type="text" name="kode_pos" class="form-control" id="kode_pos"
+                                <input type="number" name="kode_pos" class="form-control" id="kode_pos"
                                     placeholder="Masukkan kode pos" required
                                     value="{{ old('kode_pos', $alamat->kode_pos) }}">
                             </div>

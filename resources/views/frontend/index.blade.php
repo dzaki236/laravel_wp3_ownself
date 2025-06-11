@@ -285,5 +285,6 @@
     <!-- Product Section End -->
 @endsection
 @push('js')
+    <script src="{{ asset('frontend/js/jquery.nice-select.min.js') }}"></script>
     <script src="{{ asset('frontend/js/main.js') }}"></script>
 @endpush

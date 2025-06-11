@@ -6,7 +6,8 @@
             @if (auth()->user()->role == 'customer')
                 <a href="{{ route('cart.index') }}">
                     <div class="offcanvas__cart__item">
-                        <a href="{{ route('cart.index') }}"><img src="{{ asset('frontend/img/icon/cart.png') }}" alt="">
+                        <a href="{{ route('cart.index') }}"><img src="{{ asset('frontend/img/icon/cart.png') }}"
+                                alt="">
                             <span>{{ auth()->user()->carts->count() }}</span></a>
                         <div class="cart__price">Cart:
                             <span>{{ format_rupiah(auth()->user()->carts->sum('total_harga')) }}</span>
@@ -37,7 +38,8 @@
                     <li>Welcome, {{ auth()->user()->name }} <span class="arrow_carrot-down"></span>
                         <ul>
                             <li><a href="" class="text-white">Profile</a></li>
-                            <li><a href="{{ route('auth.logout') }}" class="text-white">Logout</a></li>
+                            <li><span onclick="logout()" class="text-white">Logout</span></li>
+                            {{-- <li><a href="{{ route('auth.logout') }}" class="text-white">Logout</a></li> --}}
                         </ul>
                     </li>
                 </ul>
@@ -71,7 +73,9 @@
                                             <ul>
                                                 <li><a href="{{ route('my-profile.index') }}"
                                                         class="text-white">Profile</a></li>
-                                                <li><a href="{{ route('auth.logout') }}" class="text-white">Logout</a></li>
+                                                <li><span onclick="logout()" class="text-white">Logout</span></li>
+
+                                                {{-- <li><a href="{{ route('auth.logout') }}" class="text-white">Logout</a></li> --}}
                                             </ul>
                                         </li>
                                     </ul>

@@ -46,3 +46,17 @@
         });
     });
 </script>
+<script>
+    function logout() {
+        $.ajax({
+            type: "GET",
+            url: "{{ route('auth.logout') }}",
+            success: function (response) {
+
+                // window.location.href = "/";
+                location.reload();
+            }
+        });
+        // window.open('{{ route('auth.logout') }}', '_self');
+    }
+</script>

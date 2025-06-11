@@ -31,6 +31,8 @@ class AlamatController extends Controller
         # code...
         $this->validate($request, [
             '*' => 'required',
+            'no_hp' => 'numeric|regex:/^[0-9]{8,16}$/',
+            'kode_pos' => 'numeric',
         ]);
         $data = $request->all();
         $data['user_id'] = auth()->user()->id;
@@ -42,6 +44,8 @@ class AlamatController extends Controller
         # code...
         $this->validate($request, [
             '*' => 'required',
+            'no_hp' => 'numeric|regex:/^[0-9]{8,16}$/',
+            'kode_pos' => 'numeric',
         ]);
         $data = $request->all();
         $alamat = Alamat::find($id);

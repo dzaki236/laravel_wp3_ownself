@@ -42,19 +42,24 @@ class AuthController extends Controller
                 return redirect('/')->with('success', 'Login Successfully');
             }
         } catch (\Exception $e) {
-            return response()->json([
-                'status' => false,
-                'message' => $e->getMessage(),
-            ], 500);
+            return redirect('/');
+            // return response()->json([
+            //     'status' => false,
+            //     'message' => $e->getMessage(),
+            // ], 500);
         }
     }
     public function logout(Request $request)
     {
         # code...
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-        alert('Success!', 'Logout Successfully', 'success');
-        return redirect('/');
+        if ($request->ajax()) {
+            # code...
+            Auth::logout();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+            alert('Success!', 'Logout Successfully', 'success');
+            return response()->json(['status' => true, 'message' => 'Logout Successfully']);
+        }
+        return response()->json(['status' => false, 'message' => 'Logout Failed']);
     }
 }
