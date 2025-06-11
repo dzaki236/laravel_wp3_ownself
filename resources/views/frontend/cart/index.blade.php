@@ -55,7 +55,7 @@
                                                     <div class="product__cart__item__text">
                                                         <h6>{{ $item_cart->produk->nama_produk }}</h6>
                                                         <p>
-                                                            @if ($item_cart->qty < $item_cart->produk->stock)
+                                                            @if ($item_cart->qty > $item_cart->produk->stock)
                                                                 <span class="text-danger">Stok :
                                                                     {{ $item_cart->produk->stock }}</span>
                                                             @else
