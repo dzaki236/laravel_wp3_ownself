@@ -22,7 +22,7 @@ class DashboardController extends Controller
         $data['customers'] = User::where('role', 'customer')->latest()->take(10)->paginate(3);
         $data['total_kategori'] = Kategori::count();
         $data['total_transaksi'] = Transaksi::where('status', 'success')->count();
-        $data['total_penjualan_bulan_ini'] = Format::rupiah(Transaksi::where('status', 'success')->whereMonth('created_at', date('m'))->sum('total_harga_transaksi'));
+        $data['total_penjualan_bulan_ini'] = Format::rupiah(Transaksi::where('status', 'success')->whereBetween('created_at', [now()->startOfMonth(), now()->endOfMonth()])->sum('total_harga_transaksi'));
         return view('backend.dashboard.index', $data);
     }
 }

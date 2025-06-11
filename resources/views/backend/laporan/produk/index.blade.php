@@ -4,7 +4,7 @@
     <div class="card text-start">
         <div class="card-body">
             <h4 class="card-title">Laporan Data Produk</h4>
-            <form action="{{ route('backend.report.produk.pdf') }}" method="get">
+            <form action="{{ route('backend.report.produk.generate') }}" method="get">
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-4">
                         <div class="mb-3">
