@@ -54,7 +54,12 @@
                                                 <td class="product__cart__item">
                                                     <div class="product__cart__item__text">
                                                         <h6>{{ $item_cart->produk->nama_produk }}</h6>
-                                                        <p>Stok : {{ $item_cart->produk->stock }} <br>Berat :
+                                                        <p>Stok : @if ($item_cart->qty < $item_cart->produk->stock)
+                                                                <span
+                                                                    class="text-danger">{{ $item_cart->produk->stock }}</span>
+                                                            @else
+                                                                {{ $item_cart->produk->stock }}
+                                                            @endif <br>Berat :
                                                             {{ $item_cart->produk->berat }} Gram</p>
                                                         <h5>{{ format_rupiah($item_cart->produk->harga) }}</h5>
                                                     </div>
