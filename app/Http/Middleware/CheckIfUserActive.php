@@ -24,8 +24,6 @@ class CheckIfUserActive
                 session()->regenerateToken();
                 return redirect()->route('backend.auth')->with('error', 'Akun tidak aktif.');
             }
-        } else {
-            return redirect()->route('backend.auth')->with('error', 'Silakan masuk untuk melanjutkan.');
         }
         return $next($request);
     }
