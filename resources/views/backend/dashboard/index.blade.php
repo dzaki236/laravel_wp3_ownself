@@ -55,7 +55,7 @@
         <div class="col-12 col-sm-12 col-md-6 mb-4">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Latest User</h4>
+                    <h4 class="card-title">Latest User Customer</h4>
                 </div>
                 <div class="comment-widgets scrollable ps-container ps-theme-default"
                     data-ps-id="bdb1bcbc-44e1-e0bc-fea0-661a926c2d82">
