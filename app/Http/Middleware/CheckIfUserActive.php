@@ -22,10 +22,10 @@ class CheckIfUserActive
                 Auth::logout();
                 session()->invalidate();
                 session()->regenerateToken();
-                return redirect()->route('login')->with('error', 'Akun tidak aktif.');
+                return redirect()->route('backend.auth')->with('error', 'Akun tidak aktif.');
             }
         } else {
-            return redirect()->route('login')->with('error', 'Silakan masuk untuk melanjutkan.');
+            return redirect()->route('backend.auth')->with('error', 'Silakan masuk untuk melanjutkan.');
         }
         return $next($request);
     }
