@@ -74,9 +74,9 @@ class TransaksiController extends Controller
                 'total_berat' => $item->qty * $item->produk->berat,
                 'status' => 'pending',
             ]);
-            $item->produk->update([
-                'stock' => $item->produk->stock - $item->qty,
-            ]);
+            // $item->produk->update([
+            //     'stock' => $item->produk->stock - $item->qty,
+            // ]);
         }
         $transaksi->save();
         $ongkir_transaksi = new OngkirTransaksi();
@@ -137,6 +137,14 @@ class TransaksiController extends Controller
             if ($status_fraud == 'accept') {
                 $order->status = 'success';
                 $order->save();
+                // update stock produk
+                foreach ($order->orders as $item) {
+                    $produk = $item->produk;
+                    if ($produk) {
+                        $produk->stock -= $item->qty;
+                        $produk->save();
+                    }
+                }
             } else if ($status_fraud == 'challenge') {
                 $order->status = 'challenge';
                 $order->save();
@@ -144,6 +152,13 @@ class TransaksiController extends Controller
         } else if ($status_transaksi == 'settlement') {
             $order->status = 'success';
             $order->save();
+            foreach ($order->orders as $item) {
+                $produk = $item->produk;
+                if ($produk) {
+                    $produk->stock -= $item->qty;
+                    $produk->save();
+                }
+            }
         } else if ($status_transaksi == 'pending') {
             $order->status = 'pending';
             $order->save();
