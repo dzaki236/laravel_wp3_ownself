@@ -9,9 +9,9 @@
                         href="{{ route('backend.dashboard.index') }}" aria-expanded="false"><i
                             class="mdi mdi-view-dashboard"></i><span class="hide-menu">Beranda</span></a></li>
                 @if (auth()->user()->role == 'super_admin')
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                            href="charts.html" aria-expanded="false"><i class="mdi mdi-account"></i><span
-                                class="hide-menu">User</span></a></li>
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link {{ $page == 'user' ? 'active' : '' }}"
+                            href="{{ route('backend.user.index') }}" aria-expanded="false"><i
+                                class="mdi mdi-account"></i><span class="hide-menu">User</span></a></li>
                 @endif
                 @if (in_array(auth()->user()->role, ['super_admin', 'admin']))
                     <li class="sidebar-item"> <a

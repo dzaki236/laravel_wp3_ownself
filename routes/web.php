@@ -1,8 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Backend\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +13,7 @@ use App\Http\Controllers\Backend\AuthController;
 |
 */
 
-Route::middleware('throttle:10,1')->group(function () {
+Route::middleware('throttle:1000,1')->group(function () {
 
     // Frontend Routes
     $includeFrontEndFolders = ['frontend'];

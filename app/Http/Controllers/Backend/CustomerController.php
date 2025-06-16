@@ -14,14 +14,14 @@ class CustomerController extends Controller
         $data['title'] = 'Customer Management';
         $data['page'] = 'customer';
         $data['customers'] = User::where('role', 'customer')->get();
-        return view('backend.customer.index', $data);
+        return view('backend.user_management.customer.index', $data);
     }
     public function edit($id)
     {
         $data['title'] = 'Edit Customer';
         $data['page'] = 'customer';
         $data['customer'] = User::findOrFail($id);
-        return view('backend.customer.edit', $data);
+        return view('backend.user_management.customer.edit', $data);
     }
     public function destroy($id)
     {
