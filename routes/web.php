@@ -24,7 +24,7 @@ Route::middleware('throttle:1000,1')->group(function () {
     }
 
     // Backend Routes
-    Route::prefix('backend')->name('backend.')->group(function () {
+    Route::middleware('checkIfUserActive')->prefix('backend')->name('backend.')->group(function () {
         $includeBackendFolders = ['backend'];
         foreach ($includeBackendFolders as $folderBackend) {
             foreach (glob(__DIR__ . "/{$folderBackend}/*.php") as $fileBackend) {
