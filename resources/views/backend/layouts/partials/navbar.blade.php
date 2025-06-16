@@ -66,7 +66,7 @@
                             class="rounded-circle" width="31">
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('backend.my-profile.index') }}"><i
+                        <a class="dropdown-item" href="{{ route('backend.profile.index') }}"><i
                                 class="ti-user me-1 ms-1"></i>
                             My Profile</a>
                         <div class="dropdown-divider"></div>

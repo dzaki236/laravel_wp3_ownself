@@ -124,8 +124,12 @@
                         </li>
                         <li class="{{ $page == 'produk' ? 'active' : '' }}"><a
                                 href="{{ route('produk.index') }}">Product</a></li>
-                        <li class="{{ $page == 'transaksi' ? 'active' : '' }}"><a
-                                href="{{ route('transaksi.index') }}">Transaksi</a></li>
+                        @auth
+                            @if (auth()->user()->role == 'customer')
+                                <li class="{{ $page == 'transaksi' ? 'active' : '' }}"><a
+                                        href="{{ route('transaksi.index') }}">Transaksi</a></li>
+                            @endif
+                        @endauth
                     </ul>
                 </nav>
             </div>

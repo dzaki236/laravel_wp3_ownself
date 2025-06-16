@@ -20,16 +20,26 @@ class ProfileController extends Controller
     public function update(Request $request)
     {
         //
+        $user_id = $request->has('user_id') ? $request->user_id : auth()->user()->id;
         $request->validate([
             "name" => 'required',
-            "email" => "required|email|unique:users,email," . auth()->user()->id,
-            "phone" => "nullable|numeric|unique:users,phone," . auth()->user()->id,
+            "email" => "required|email|unique:users,email," . $user_id,
+            "phone" => "nullable|numeric|unique:users,phone," . $user_id,
             "password" => "nullable|min:6|confirmed",
         ]);
-        $user = User::find(auth()->user()->id);
+        $user = User::find($user_id);
         $user->name = $request->name;
         $user->email = $request->email;
         $user->phone = $request->phone;
+        if ($request->has('user_id')) {
+            # code...
+            if ($request->role != null) {
+                $user->role = $request->role;
+            }
+            if ($request->status != null) {
+                $user->status = $request->status;
+            }
+        }
         if ($request->password != null) {
             # code...
             $user->password = bcrypt($request->password);
@@ -41,7 +51,7 @@ class ProfileController extends Controller
         }
     }
 
-    public function update_foto_profile(Request $request)
+    public function update_foto_profile(Request $request, $id)
     {
         # code...
         {
@@ -51,7 +61,7 @@ class ProfileController extends Controller
             ]);
             $folder = 'uploads/user'; // Folder custom (bisa disesuaikan)
             $disk = 'public';
-            $user = User::find(auth()->user()->id);
+            $user = User::find($id);
             if ($request->hasFile('foto_profile')) {
                 # code...
                 if ($user->foto_profile != null) {
