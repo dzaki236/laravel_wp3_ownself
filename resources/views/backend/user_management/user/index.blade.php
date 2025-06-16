@@ -4,6 +4,8 @@
     <div class="card text-start">
         <div class="card-body">
             <div class="table-responsive">
+                <a class="btn btn-primary mb-4" href="{{ route('backend.user.create') }}">Tambah User Baru [+]</a>
+
                 <table class="table" id="zero_config">
                     <thead>
                         <tr>
@@ -20,11 +22,11 @@
                                 <td scope="row">{{ $loop->iteration }}</td>
                                 <td>{{ $item_user->name }} <br><small
                                         class="d-block text-muted">{{ $item_user->email }}</small></td>
-                                        <td>{{ ucfirst($item_user->status) }}</td>
-                                        <td>{{ ucfirst($item_user->role) }}</td>
+                                <td>{{ ucfirst($item_user->status) }}</td>
+                                <td>{{ ucfirst($item_user->role) }}</td>
                                 <td>
-                                    <form action="{{ route('backend.user.destroy', $item_user->id) }}"
-                                        method="post" class="delete-form">
+                                    <form action="{{ route('backend.user.destroy', $item_user->id) }}" method="post"
+                                        class="delete-form">
                                         @method('DELETE')
                                         @csrf
                                         <button type="button" class="btn btn-sm btn-danger text-white btn-delete">
