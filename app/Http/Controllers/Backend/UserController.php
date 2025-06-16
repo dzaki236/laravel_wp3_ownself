@@ -30,7 +30,7 @@ class UserController extends Controller
             'email' => 'required|string|email|max:255|unique:users,email',
             'password' => 'required|string|min:8|confirmed',
             'role' => 'required|in:admin,super_admin', // Adjust roles as needed
-            'status' => 'required|in:active,inactive', // Optional status field
+            'status' => 'required|in:aktif,tidak_aktif', // Optional status field
         ]);
 
         $user = new User();
