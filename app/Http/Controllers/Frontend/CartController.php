@@ -65,6 +65,13 @@ class CartController extends Controller
 
             $cart->save();
         } else {
+            if ($request->input('qty', 1) < 1) {
+                return redirect()->back()->with('error', 'Jumlah produk tidak boleh kurang dari 1.');
+                # code...
+            }
+            if ($request->input('qty', 1) > $produk->stock) {
+                return redirect()->back()->with('error', 'Jumlah produk melebihi stok yang tersedia.');
+            }
             // Jika produk belum ada di keranjang, buat entri baru
             Cart::create([
                 'user_id' => auth()->user()->id,
