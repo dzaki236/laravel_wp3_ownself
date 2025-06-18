@@ -17,4 +17,10 @@ class Transaksi extends Model
         # code...
         return $this->hasOne(OngkirTransaksi::class, 'transaksi_id', 'id');
     }
+
+    public function user()
+    {
+        # code...
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
 }

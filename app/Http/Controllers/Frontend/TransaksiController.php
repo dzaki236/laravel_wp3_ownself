@@ -11,6 +11,7 @@ use App\Models\Transaksi;
 use Dzaki236\RajaOngkir\Resources\OngkosKirim;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\Mail;
 
 class TransaksiController extends Controller
 {
@@ -128,7 +129,7 @@ class TransaksiController extends Controller
         }
 
         // Cari order di database Anda
-        $order = Transaksi::where('transaksi_id', $orderId)->first();
+        $order = Transaksi::with('user')->where('transaksi_id', $orderId)->first();
 
         if (!$order) {
             return response()->json(['message' => 'Order not found'], 404);
@@ -145,6 +146,10 @@ class TransaksiController extends Controller
                         $produk->save();
                     }
                 }
+                Mail::send('emails.transaksi-berhasil', ['transaksi_id' => $order->transaksi_id, 'user' => $order->user], function ($message) use ($order) {
+                    $message->to($order->user->email);
+                    $message->subject('Transaksi Berhasil - #' . $order->transaksi_id);
+                });
             } else if ($status_fraud == 'challenge') {
                 $order->status = 'challenge';
                 $order->save();
@@ -159,6 +164,10 @@ class TransaksiController extends Controller
                     $produk->save();
                 }
             }
+            Mail::send('emails.transaksi-berhasil', ['transaksi_id' => $order->transaksi_id, 'user' => $order->user], function ($message) use ($order) {
+                $message->to($order->user->email);
+                $message->subject('Transaksi Berhasil - #' . $order->transaksi_id);
+            });
         } else if ($status_transaksi == 'pending') {
             $order->status = 'pending';
             $order->save();
